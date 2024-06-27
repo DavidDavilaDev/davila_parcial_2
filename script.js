@@ -10,13 +10,19 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const messageElement = document.getElementById('message');
 
     if (username === correctUsername && password === correctPassword) {
-        messageElement.textContent = 'Login successful! Redirecting in 5 seconds...';
+        let countdown = 5;
+        messageElement.textContent = `Login successful! Redirecting in ${countdown} seconds...`;
         messageElement.style.color = 'green';
 
-        // Redirect after 5 seconds
-        setTimeout(function() {
-            window.location.href = 'https://davila.projectsutd.online/parcial1/project-management/';
-        }, 5000);
+        const countdownInterval = setInterval(function() {
+            countdown -= 1;
+            if (countdown > 0) {
+                messageElement.textContent = `Login successful! Redirecting in ${countdown} seconds...`;
+            } else {
+                clearInterval(countdownInterval);
+                window.location.href = 'https://davila.projectsutd.online/parcial1/project-management/';
+            }
+        }, 1000);
     } else {
         messageElement.textContent = 'Invalid username or password.';
         messageElement.style.color = 'red';
