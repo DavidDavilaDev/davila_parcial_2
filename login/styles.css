@@ -1,144 +1,173 @@
 body {
-    font-family: monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight:bolder;
-    height: 100vh;
-    background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #c1f2fc9f;
 }
 
-.login-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+.container {
+  max-width: 350px;
+  background: #F8F9FD;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
+  border-radius: 40px;
+  padding: 25px 35px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+  margin: 20px;
+
+  width: 300px; /* Ajusta el ancho según sea necesario */
+  text-align: center;
+  margin-top: -50px; /* Ajuste opcional para centrar verticalmente */
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family:monospace;
+.heading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(16, 137, 211);
 }
 
-.form-group {
-    margin-bottom: 15px;
+.form {
+  margin-top: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+.form .input {
+  width: 87%;
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: #cff0ff 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
+.form .input::-moz-placeholder {
+  color: rgb(170, 170, 170);
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #00ff9d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.form .input::placeholder {
+  color: rgb(170, 170, 170);
 }
 
-button:hover {
-    background-color: #00d181;
+.form .input:focus {
+  outline: none;
+  border-inline: 2px solid #12B1D1;
 }
 
-#message {
-    margin-top: 20px;
-    text-align: center;
-    color: red;
+.form .forgot-password {
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
-.glass {
-    background: rgba( 189, 253, 220, 0.2 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 6.5px );
-    -webkit-backdrop-filter: blur( 6.5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+.form .forgot-password a {
+  font-size: 11px;
+  color: #0099ff;
+  text-decoration: none;
 }
 
-.textInputWrapper {
-    position: relative;
-    width: 100%;
-    margin: 12px 0px;
-    --accent-color: #a3e583;
-  }
-  
-  .textInputWrapper:before {
-    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  }
-  
-  .textInputWrapper:before,
-  .textInputWrapper:after {
-    content: "";
-    left: 0;
-    right: 0;
-    position: absolute;
-    pointer-events: none;
-    bottom: -1px;
-    z-index: 4;
-    width: 100%;
-  }
-  
-  .textInputWrapper:focus-within:before {
-    border-bottom: 1px solid var(--accent-color);
-  }
-  
-  .textInputWrapper:before {
-    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  }
-  
-  .textInputWrapper:focus-within:before {
-    border-bottom: 1px solid var(--accent-color);
-    transform: scaleX(1);
-  }
-  
-  .textInputWrapper:focus-within:after {
-    border-bottom: 2px solid var(--accent-color);
-    transform: scaleX(1);
-  }
-  
-  .textInputWrapper:after {
-    content: "";
-    transform: scaleX(0);
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-    will-change: transform;
-    border-bottom: 2px solid var(--accent-color);
-    border-bottom-color: var(--accent-color);
-  }
-  
-  
-  .textInputWrapper .textInput {
-    border-radius: 5px 5px 0px 0px;
-    box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
-    max-height: 36px;
-    background-color: #ffffff;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 200ms;
-    transition-property: background-color;
-    color: #000000;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 12px;
-    width: 100%;
-    border-left: none;
-    border-bottom: none;
-    border-right: none;
-  }
-  
-  .textInputWrapper .textInput:focus,
-  .textInputWrapper .textInput:active {
-    outline: none;
-  }
+.form .login-button {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+  color: white;
+  padding-block: 15px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
 
+.form .login-button:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+}
 
-  
+.form .login-button:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+
+.social-account-container {
+  margin-top: 25px;
+}
+
+.social-account-container .title {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  color: rgb(170, 170, 170);
+}
+
+.social-account-container .social-accounts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.social-account-container .social-accounts .social-button {
+  background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+  border: 5px solid white;
+  padding: 5px;
+  border-radius: 50%;
+  width: 40px;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-account-container .social-accounts .social-button .svg {
+  fill: white;
+  margin: auto;
+}
+
+.social-account-container .social-accounts .social-button:hover {
+  transform: scale(1.2);
+}
+
+.social-account-container .social-accounts .social-button:active {
+  transform: scale(0.9);
+}
+
+.agreement {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.agreement a {
+  text-decoration: none;
+  color: #0099ff;
+  font-size: 9px;
+}
+
+/* Estilos para SweetAlert2 */
+.swal2-popup {
+  font-size: 1rem; /* Ajusta el tamaño de fuente si es necesario */
+  margin: 0; /* Elimina cualquier margen */
+  padding: 0; /* Elimina cualquier relleno */
+}
+
+.swal2-title {
+  font-size: 1.2rem; /* Ajusta el tamaño de fuente del título si es necesario */
+}
+
+.swal2-content {
+  font-size: 1rem; /* Ajusta el tamaño de fuente del contenido si es necesario */
+}
+
+/* Ajustes adicionales para el cuerpo del mensaje si es necesario */
+.swal2-popup .swal2-content {
+  margin-bottom: 0; /* Elimina cualquier margen inferior en el contenido */
+}
+
