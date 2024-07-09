@@ -7,24 +7,30 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const correctUsername = 'examen_parcial2';
     const correctPassword = 'Voyporel100';
 
-    const messageElement = document.getElementById('message');
-
     if (username === correctUsername && password === correctPassword) {
-        let countdown = 3;
-        messageElement.textContent = `Login successful! Redirecting in ${countdown} seconds...`;
-        messageElement.style.color = 'green';
-
-        const countdownInterval = setInterval(function() {
-            countdown -= 1;
-            if (countdown > 0) {
-                messageElement.textContent = `Login successful! Redirecting in ${countdown} seconds...`;
-            } else {
-                clearInterval(countdownInterval);
-                window.location.href = 'https://davila.projectsutd.online/parcial1/project-management/';
-            }
-        }, 1000);
+        Swal.fire({
+            icon: 'success',
+            title: 'Login successful!',
+            text: 'Redirecting in 3 seconds...',
+            timer: 3000,
+            timerProgressBar: true,
+            showConfirmButton: false,
+            position: 'center',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false
+        }).then(() => {
+            window.location.href = 'https://davila.projectsutd.online/parcial1/project-management/';
+        });
     } else {
-        messageElement.textContent = 'Invalid username or password.';
-        messageElement.style.color = 'red';
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Invalid username or password!',
+            position: 'center',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false
+        });
     }
 });
